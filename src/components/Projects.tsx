@@ -1,37 +1,31 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 interface Project {
   title: string;
   description: string;
   tech: string[];
-  github?: string;
   external?: string;
 }
 
 const projects: Project[] = [
   {
-    title: "Cloud Dashboard",
+    title: "VetDrive Platform",
     description:
-      "A comprehensive cloud infrastructure monitoring dashboard with real-time metrics, automated alerts, and cost optimization recommendations. Built for enterprise-scale deployments.",
-    tech: ["React", "TypeScript", "D3.js", "AWS", "WebSocket"],
-    github: "#",
-    external: "#",
+      "Cloud-based practice management SaaS platform serving 120+ veterinary clinics. Architected scalable Node.js microservices and RESTful APIs with automated ETL pipelines that reduced client onboarding from 2 weeks to 3 days.",
+    tech: ["Node.js", "TypeScript", "AWS", "Docker", "MongoDB"],
+    external: "https://vetdrive.co",
   },
   {
-    title: "AI Code Assistant",
+    title: "GIS Monitoring System",
     description:
-      "An intelligent code completion and refactoring tool powered by machine learning. Integrates seamlessly with popular IDEs and supports multiple programming languages.",
-    tech: ["Python", "TensorFlow", "FastAPI", "Docker"],
-    github: "#",
-    external: "#",
+      "Mission-critical real-time monitoring system for Ericsson-Mobily telecommunications project. Built scalable backend services processing 2G/3G/TDD network data with RESTful APIs handling 1,000+ daily requests.",
+    tech: ["Node.js", "Express.js", "MongoDB", "REST APIs"],
   },
   {
-    title: "E-commerce Platform",
+    title: "ZAD & Tayar Apps",
     description:
-      "A scalable e-commerce solution with headless architecture, supporting multiple storefronts, payment gateways, and inventory management systems.",
-    tech: ["Next.js", "GraphQL", "PostgreSQL", "Stripe"],
-    github: "#",
-    external: "#",
+      "Enhanced e-commerce mobile applications serving 100K+ users. Built real-time driver tracking features and location-based services with high-volume concurrent request handling.",
+    tech: ["Java", "Android SDK", "Google Location API", "Geofence SDK"],
   },
 ];
 
@@ -39,7 +33,9 @@ const Projects = () => {
   return (
     <section id="projects" className="section-padding container-narrow">
       <h2 className="text-sm font-mono text-muted-foreground mb-2">02.</h2>
-      <h3 className="text-2xl md:text-3xl font-semibold mb-12">Featured Projects</h3>
+      <h3 className="text-2xl md:text-3xl font-semibold mb-12">
+        Featured Projects
+      </h3>
 
       <div className="space-y-24">
         {projects.map((project, index) => (
@@ -84,30 +80,23 @@ const Projects = () => {
                   <li key={t}>{t}</li>
                 ))}
               </ul>
-              <div
-                className={`flex gap-4 ${
-                  index % 2 === 1 ? "md:justify-end" : ""
-                }`}
-              >
-                {project.github && (
-                  <a
-                    href={project.github}
-                    className="text-foreground hover:text-primary transition-colors"
-                    aria-label="GitHub"
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
-                )}
-                {project.external && (
+              {project.external && (
+                <div
+                  className={`flex gap-4 ${
+                    index % 2 === 1 ? "md:justify-end" : ""
+                  }`}
+                >
                   <a
                     href={project.external}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-foreground hover:text-primary transition-colors"
                     aria-label="External Link"
                   >
                     <ExternalLink className="w-5 h-5" />
                   </a>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </article>
         ))}

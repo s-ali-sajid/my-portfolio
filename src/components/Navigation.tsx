@@ -33,7 +33,7 @@ const Navigation = () => {
           href="#"
           className="text-xl font-semibold text-primary hover:opacity-80 transition-opacity"
         >
-          AC
+          AS
         </a>
 
         {/* Desktop Navigation */}
@@ -67,7 +67,11 @@ const Navigation = () => {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </nav>
 

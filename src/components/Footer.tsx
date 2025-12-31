@@ -1,8 +1,12 @@
 import { Github, Linkedin, Twitter } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/s-ali-sajid", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/ali-sajid-639038143/",
+    label: "LinkedIn",
+  },
   { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
 ];
 
@@ -24,9 +28,7 @@ const Footer = () => {
             </a>
           ))}
         </div>
-        <p className="font-mono text-xs">
-          Designed & Built by Alex Chen
-        </p>
+        <p className="font-mono text-xs">Designed & Built by Ali Sajid</p>
       </div>
     </footer>
   );
